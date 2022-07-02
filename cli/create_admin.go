@@ -23,6 +23,7 @@ func createAdmin(store *storage.Storage) {
 	}
 
 	if userCreationRequest.Username == "" || userCreationRequest.Password == "" {
+		logger.Info(`Admin Username and Admin Password must be set`)
 		userCreationRequest.Username, userCreationRequest.Password = askCredentials()
 	}
 
